@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using log4net;
 
 namespace XmlTransformer
 {
     public class Log4netTransformationLogger : IXmlTransformationLogger
     {
-        private ILog _logger = LogManager.GetLogger(typeof(Log4netTransformationLogger));
         private int _indentLevel;
         private string _indentString;
         private readonly string _indentStringPiece = "  ";
@@ -55,60 +53,60 @@ namespace XmlTransformer
             switch (type)
             {
                 case MessageType.Normal:
-                    _logger.InfoFormat(IndentString + message, messageArgs);
+                    //_logger.InfoFormat(IndentString + message, messageArgs);
                     break;
                 case MessageType.Verbose:
-                    _logger.DebugFormat(IndentString + message, messageArgs);
+                    //_logger.DebugFormat(IndentString + message, messageArgs);
                     break;
                 default:
-                    _logger.InfoFormat(IndentString + message, messageArgs);
+                    //_logger.InfoFormat(IndentString + message, messageArgs);
                     break;
             }
         }
 
         public void LogWarning(string message, params object[] messageArgs)
         {
-            _logger.WarnFormat(message, messageArgs);
+            //_logger.WarnFormat(message, messageArgs);
         }
 
         public void LogWarning(string file, string message, params object[] messageArgs)
         {
-            _logger.WarnFormat(message, messageArgs);
+            //_logger.WarnFormat(message, messageArgs);
         }
 
         public void LogWarning(string file, int lineNumber, int linePosition, string message, params object[] messageArgs)
         {
-            _logger.WarnFormat(message, messageArgs);
+            //_logger.WarnFormat(message, messageArgs);
         }
 
         public void LogError(string message, params object[] messageArgs)
         {
-            _logger.ErrorFormat(message, messageArgs);
+            //_logger.ErrorFormat(message, messageArgs);
         }
 
         public void LogError(string file, string message, params object[] messageArgs)
         {
-            _logger.ErrorFormat(message, messageArgs);
+            //_logger.ErrorFormat(message, messageArgs);
         }
 
         public void LogError(string file, int lineNumber, int linePosition, string message, params object[] messageArgs)
         {
-            _logger.ErrorFormat(message, messageArgs);
+            //_logger.ErrorFormat(message, messageArgs);
         }
 
         public void LogErrorFromException(Exception ex)
         {
-            _logger.ErrorFormat(ex.Message, ex);
+            //_logger.ErrorFormat(ex.Message, ex);
         }
 
         public void LogErrorFromException(Exception ex, string file)
         {
-            _logger.ErrorFormat(ex.Message, ex);
+            //_logger.ErrorFormat(ex.Message, ex);
         }
 
         public void LogErrorFromException(Exception ex, string file, int lineNumber, int linePosition)
         {
-            _logger.Error(ex.Message, ex);
+            //_logger.Error(ex.Message, ex);
         }
 
         public void StartSection(string message, params object[] messageArgs)

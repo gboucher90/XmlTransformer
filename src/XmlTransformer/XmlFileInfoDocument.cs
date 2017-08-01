@@ -71,7 +71,7 @@ namespace XmlTransformer
             }
         }
 
-        private new Encoding TextEncoding
+        private Encoding TextEncoding
         {
             get
             {
